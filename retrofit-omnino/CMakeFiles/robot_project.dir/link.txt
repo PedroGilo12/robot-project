@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/robot_project.dir/main.c.o CMakeFiles/robot_project.dir/src/motor_control_driver.c.o -o robot_project 

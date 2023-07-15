@@ -1,11 +1,9 @@
-//
-// Created by Pedro on 14/07/2023.
-//
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <wiringPi.h>
 
 int main() {
-    printf("The program has started...\n");
-    return 0;
+	printf("Program has started...\n");
+
+	return 0;
 }
