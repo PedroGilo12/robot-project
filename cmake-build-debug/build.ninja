@@ -49,6 +49,15 @@ cmake_ninja_workdir = C$:/Users/Pedro/Documents/Motor/robot-project/cmake-build-
 
 build cmake_object_order_depends_target_robot_project: phony || CMakeFiles/robot_project.dir
 
+build CMakeFiles/robot_project.dir/retrofit-omnino/main.c.obj: C_COMPILER__robot_project_Debug C$:/Users/Pedro/Documents/Motor/robot-project/retrofit-omnino/main.c || cmake_object_order_depends_target_robot_project
+  DEP_FILE = CMakeFiles\robot_project.dir\retrofit-omnino\main.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu11
+  INCLUDES = -IC:/Users/Pedro/Documents/Motor/robot-project/retrofit-omnino/include
+  OBJECT_DIR = CMakeFiles\robot_project.dir
+  OBJECT_FILE_DIR = CMakeFiles\robot_project.dir\retrofit-omnino
+  TARGET_COMPILE_PDB = CMakeFiles\robot_project.dir\
+  TARGET_PDB = robot_project.pdb
+
 build CMakeFiles/robot_project.dir/retrofit-omnino/src/motor_control_driver.c.obj: C_COMPILER__robot_project_Debug C$:/Users/Pedro/Documents/Motor/robot-project/retrofit-omnino/src/motor_control_driver.c || cmake_object_order_depends_target_robot_project
   DEP_FILE = CMakeFiles\robot_project.dir\retrofit-omnino\src\motor_control_driver.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu11
@@ -66,7 +75,7 @@ build CMakeFiles/robot_project.dir/retrofit-omnino/src/motor_control_driver.c.ob
 #############################################
 # Link the executable robot_project.exe
 
-build robot_project.exe: C_EXECUTABLE_LINKER__robot_project_Debug CMakeFiles/robot_project.dir/retrofit-omnino/src/motor_control_driver.c.obj
+build robot_project.exe: C_EXECUTABLE_LINKER__robot_project_Debug CMakeFiles/robot_project.dir/retrofit-omnino/main.c.obj CMakeFiles/robot_project.dir/retrofit-omnino/src/motor_control_driver.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\robot_project.dir
@@ -114,6 +123,11 @@ build robot_project: phony robot_project.exe
 # Folder: C:/Users/Pedro/Documents/Motor/robot-project/cmake-build-debug
 
 build all: phony robot_project.exe
+
+# =============================================================================
+# Unknown Build Time Dependencies.
+# Tell Ninja that they may appear as side effects of build rules
+# otherwise ordered by order-only dependencies.
 
 # =============================================================================
 # Built-in targets
