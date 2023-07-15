@@ -142,6 +142,33 @@ robot_project/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_project.dir/build.make CMakeFiles/robot_project.dir/build
 .PHONY : robot_project/fast
 
+main.o: main.c.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_project.dir/build.make CMakeFiles/robot_project.dir/main.c.o
+.PHONY : main.c.o
+
+main.i: main.c.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_project.dir/build.make CMakeFiles/robot_project.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_project.dir/build.make CMakeFiles/robot_project.dir/main.c.s
+.PHONY : main.c.s
+
 src/motor_control_driver.o: src/motor_control_driver.c.o
 
 .PHONY : src/motor_control_driver.o
@@ -178,6 +205,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... robot_project"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... src/motor_control_driver.o"
 	@echo "... src/motor_control_driver.i"
 	@echo "... src/motor_control_driver.s"

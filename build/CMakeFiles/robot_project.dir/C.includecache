@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/pedro/robot-project/retrofit-omnino/main.c
+stdio.h
+-
+stdlib.h
+-
+
 /home/pedro/robot-project/retrofit-omnino/src/motor_control_driver.c
 stdio.h
 -

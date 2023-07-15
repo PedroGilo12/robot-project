@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/pedro/robot-project/retrofit-omnino/main.c" "/home/pedro/robot-project/retrofit-omnino/CMakeFiles/robot_project.dir/main.c.o"
   "/home/pedro/robot-project/retrofit-omnino/src/motor_control_driver.c" "/home/pedro/robot-project/retrofit-omnino/CMakeFiles/robot_project.dir/src/motor_control_driver.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

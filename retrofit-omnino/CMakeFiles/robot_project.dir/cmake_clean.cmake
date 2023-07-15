@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/robot_project.dir/main.c.o"
   "CMakeFiles/robot_project.dir/src/motor_control_driver.c.o"
   "robot_project"
   "robot_project.pdb"
