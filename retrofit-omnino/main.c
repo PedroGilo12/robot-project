@@ -9,7 +9,10 @@ int main ()
 {
     int serial_port ;
     char dat;
-    if ((serial_port = serialOpen ("/dev/serial0", 9600)) < 0)	/* open serial port */
+
+    printf("The program has started\n");
+
+    if ((serial_port = serialOpen("/dev/serial0", 9600)) < 0)	/* open serial port */
     {
         fprintf (stderr, "Unable to open serial device: %s\n", strerror (errno)) ;
         return 1 ;
@@ -22,6 +25,8 @@ int main ()
     }
 
     while(1){
+
+	serialPrintf(serial_port, "oi\n");
 
         if(serialDataAvail (serial_port) )
         {

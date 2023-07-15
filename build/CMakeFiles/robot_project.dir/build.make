@@ -113,6 +113,7 @@ robot_project_EXTERNAL_OBJECTS =
 robot_project: CMakeFiles/robot_project.dir/retrofit-omnino/main.c.o
 robot_project: CMakeFiles/robot_project.dir/retrofit-omnino/src/motor_control_driver.c.o
 robot_project: CMakeFiles/robot_project.dir/build.make
+robot_project: /usr/local/lib/libwiringPi.so
 robot_project: CMakeFiles/robot_project.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedro/robot-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable robot_project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/robot_project.dir/link.txt --verbose=$(VERBOSE)

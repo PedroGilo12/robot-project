@@ -9,8 +9,12 @@
 /home/pedro/robot-project/retrofit-omnino/main.c
 stdio.h
 -
-stdlib.h
+string.h
+-
+errno.h
 -
 wiringPi.h
+-
+wiringSerial.h
 -
 
