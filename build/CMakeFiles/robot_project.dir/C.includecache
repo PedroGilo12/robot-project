@@ -6,15 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/pedro/robot-project/retrofit-omnino/main.c
-stdio.h
--
-string.h
--
-errno.h
+../retrofit-omnino/include/common.h
+
+../retrofit-omnino/include/motor_control_driver.h
+common.h
 -
 wiringPi.h
 -
 wiringSerial.h
+-
+stdint.h
+-
+
+/home/pedro/desktop/robot-project/retrofit-omnino/main.c
+stdio.h
+-
+errno.h
+-
+motor_control_driver.h
+-
+common.h
 -
 

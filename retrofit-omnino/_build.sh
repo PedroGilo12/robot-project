@@ -3,4 +3,4 @@
 cmake --build ../build/
 echo "Project compiled, running...\n\n"
 
-./../build/robot_project
+sudo ./../build/robot_project

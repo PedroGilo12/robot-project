@@ -32,7 +32,7 @@ typedef struct {
  *
  * @return -1 em caso de falha | 0 em caso de sucesso
  */
-static int sm_serial_motor_init(int *serial_port);
+int sm_serial_motor_init(int *serial_port);
 
 /**
  * @brief Inicia os parâmetros de um novo motor serial.
@@ -50,6 +50,6 @@ serial_motor sm_set_serial_motor(int *serial_port, uint8_t address);
  * @param direction
  * @return
  */
-int sm_set_velocity(serial_motor *motor, uint8_t velocity, uint8_t direction)
+int sm_set_velocity(serial_motor *motor, uint8_t velocity, char direction);
 
 #endif

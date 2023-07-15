@@ -22,6 +22,10 @@ int sm_serial_motor_init(int *serial_port) {
         return 1;
     }
 
+#if DEBUG_MODE == 1
+        printf("[sm_init] Serial port and WiringPi has be started\n");
+#endif
+
     return 0;
 }
 
@@ -37,6 +41,11 @@ serial_motor sm_set_serial_motor(int *serial_port, uint8_t address) {
 }
 
 int sm_set_velocity(serial_motor *motor, uint8_t velocity, char direction) {
+
+#if DEBUG_MODE == 1
+        printf("[sm_set_velocity] Setting velocity...\n");
+#endif
+
     motor->velocity = velocity;
     motor->direction = direction;
     serialPutchar(motor->serial_port, motor->address);
@@ -44,11 +53,12 @@ int sm_set_velocity(serial_motor *motor, uint8_t velocity, char direction) {
     serialPutchar(motor->serial_port, motor->direction);
 
     if (serialDataAvail(motor->serial_port)) {
-        char dat = serialGetchar(motor->serial_port);
+            char dat = serialGetchar(motor->serial_port);
 #if DEBUG_MODE == 1
-        printf("[sm_set_velocity] Received response: %d\n", dat);
+	    printf("[sm_set_velocity] Received response: %d\n", dat);
 #endif
     }
 
     return 0;
+
 }

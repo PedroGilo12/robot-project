@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/home/pedro/desktop/robot-project")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/pedro/desktop/robot-project/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/pedro/desktop/robot-project")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)
