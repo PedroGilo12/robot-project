@@ -45,7 +45,7 @@ serial_motor sm_set_serial_motor(int *serial_port, uint8_t address) {
  * @param motor
  * @return
  */
-int sm_update_motor(serial * motor) {
+int sm_update_motor(serial_motor * motor) {
     serialPutchar(motor->serial_port, motor->address);
     serialPutchar(motor->serial_port, motor->velocity);
     serialPutchar(motor->serial_port, motor->direction);
@@ -79,6 +79,6 @@ void sm_stop_motor(serial_motor *motor) {
 
     sm_update_motor(motor);
 
-    return 0;
+    return;
 }
 

@@ -21,9 +21,9 @@ int main() {
     motor_b = sm_set_serial_motor(&serial_port, 250);
     motor_c = sm_set_serial_motor(&serial_port, 245);
 
-    sm_stop_motor(motor_a);
-    sm_stop_motor(motor_b);
-    sm_stop_motor(motor_c);
+    sm_stop_motor(&motor_a);
+    sm_stop_motor(&motor_b);
+    sm_stop_motor(&motor_c);
 
     while (1) {
         printf("Comandos: \n");
@@ -38,7 +38,7 @@ int main() {
 
         switch (choice) {
             case 1:
-                printf("vel vel vel\n")
+                printf("vel vel vel\n");
                 int vel;
 
                 scanf("%d", &vel);
@@ -47,7 +47,7 @@ int main() {
                 scanf("%d", &vel);
                 sm_set_velocity(&motor_b, vel, 'f');
 
-                scanf("%d%d", &vel);
+                scanf("%d", &vel);
                 sm_set_velocity(&motor_c, vel, 'f');
 
                 break;
