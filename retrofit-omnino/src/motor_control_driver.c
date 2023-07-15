@@ -40,6 +40,17 @@ serial_motor sm_set_serial_motor(int *serial_port, uint8_t address) {
     return motor;
 }
 
+/**
+ * @brief Atualiza os valores do motor
+ * @param motor
+ * @return
+ */
+int sm_update_motor(serial * motor) {
+    serialPutchar(motor->serial_port, motor->address);
+    serialPutchar(motor->serial_port, motor->velocity);
+    serialPutchar(motor->serial_port, motor->direction);
+}
+
 int sm_set_velocity(serial_motor *motor, uint8_t velocity, char direction) {
 
 #if DEBUG_MODE == 1
@@ -48,17 +59,26 @@ int sm_set_velocity(serial_motor *motor, uint8_t velocity, char direction) {
 
     motor->velocity = velocity;
     motor->direction = direction;
-    serialPutchar(motor->serial_port, motor->address);
-    serialPutchar(motor->serial_port, motor->velocity);
-    serialPutchar(motor->serial_port, motor->direction);
+
+    sm_update_motor(motor);
 
     if (serialDataAvail(motor->serial_port)) {
-            char dat = serialGetchar(motor->serial_port);
+        char dat = serialGetchar(motor->serial_port);
 #if DEBUG_MODE == 1
-	    printf("[sm_set_velocity] Received response: %d\n", dat);
+        printf("[sm_set_velocity] Received response: %d\n", dat);
 #endif
     }
 
     return 0;
-
 }
+
+void sm_stop_motor(serial_motor *motor) {
+
+    motor->velocity = 0;
+    motor->direction = 's';
+
+    sm_update_motor(motor);
+
+    return 0;
+}
+

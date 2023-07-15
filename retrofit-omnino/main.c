@@ -4,7 +4,11 @@
 #include <common.h>
 #include <unistd.h>
 
-int main(){
+serial_motor motor_a;
+serial_motor motor_b;
+serial_motor motor_c;
+
+int main() {
 
 #if DEBUG_MODE == 1
     printf("[main] The program has started\n");
@@ -13,15 +17,55 @@ int main(){
     int serial_port;
     sm_serial_motor_init(&serial_port);
 
-    serial_motor motor_a = sm_set_serial_motor(&serial_port, 255);
-    serial_motor motor_b = sm_set_serial_motor(&serial_port, 250);
-    serial_motor motor_c = sm_set_serial_motor(&serial_port, 245);
+    motor_a = sm_set_serial_motor(&serial_port, 255);
+    motor_b = sm_set_serial_motor(&serial_port, 250);
+    motor_c = sm_set_serial_motor(&serial_port, 245);
 
-    sm_set_velocity(&motor_a, 0, 's');
-    sm_set_velocity(&motor_b, 0, 's');
-    sm_set_velocity(&motor_c, 0, 's');
+    sm_stop_motor(motor_a);
+    sm_stop_motor(motor_b);
+    sm_stop_motor(motor_c);
 
-    //sleep(1);
+    while (1) {
+        printf("Comandos: \n");
+        printf("1 - Setar a velocidade dos 3 motores ao mesmo tempo.\n");
+        printf("2 - Setar individualmente a velocidade do motor.");
+        printf("3 - Parar todos os motores.\n");
+        printf("4 - Parar um motor individualmente.\n");
+
+        int choice;
+
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("vel vel vel\n")
+                int vel;
+
+                scanf("%d", &vel);
+                sm_set_velocity(&motor_a, vel, 'f');
+
+                scanf("%d", &vel);
+                sm_set_velocity(&motor_b, vel, 'f');
+
+                scanf("%d%d", &vel);
+                sm_set_velocity(&motor_c, vel, 'f');
+
+                break;
+
+            case 2:
+
+                break;
+
+            case 3:
+
+                break;
+
+            case 4:
+
+                break;
+
+        }
+    }
 
 #if DEBUG_MODE == 1
     printf("[main] The program has finished\n");

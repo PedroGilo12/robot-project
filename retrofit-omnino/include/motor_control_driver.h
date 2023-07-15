@@ -44,12 +44,20 @@ int sm_serial_motor_init(int *serial_port);
 serial_motor sm_set_serial_motor(int *serial_port, uint8_t address);
 
 /**
+ * @brief Seta uma velocidade para o motor.
  *
- * @param motor
- * @param velocity
- * @param direction
- * @return
+ * @param motor Endereço do motor que será acionado.
+ * @param velocity Velocidade do motor (0 - 100);
+ * @param direction Direção do motor ('f', 'b', 's').
+ * @return 0
  */
 int sm_set_velocity(serial_motor *motor, uint8_t velocity, char direction);
+
+/**
+ * @brief Para o motor
+ *
+ * @param motor
+ */
+void sm_stop_motor(serial_motor *motor);
 
 #endif
