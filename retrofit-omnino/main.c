@@ -27,20 +27,37 @@ int main() {
 
     while (1) {
         printf("Comandos: \n");
-        printf("1 - Setar a velocidade dos 3 motores ao mesmo tempo.\n");
-        printf("2 - Setar individualmente a velocidade do motor.");
+        printf("1 - Setar a velocidade de um motor\n");
+        printf("2 - Enviar velocidades");
         printf("3 - Parar todos os motores.\n");
-        printf("4 - Parar um motor individualmente.\n");
-
         int choice;
 
         scanf("%d", &choice);
 
         switch (choice) {
             case 1:
-                printf("vel vel vel\n");
-                int vel;
+                int address, velocity;
+                char direction;
 
+                printf("Digite em ordem: Motor Velocidade Direção\n");
+                scanf("%d %d %c", &address, &velocity, &direction);
+
+                printf("Motor: %d\nVelocidade: %d\nDirection: %c", address, velocity, direction);
+                if(address == 1) {
+                    sm_set_velocity(&motor_a, velocity, direction);
+                }
+                if(address == 2) {
+                    sm_set_velocity(&motor_b, velocity, direction);
+                }
+                if(address == 3) {
+                    sm_set_velocity(&motor_c, velocity, direction);
+                }
+
+                break;
+            case 2:
+                sm_stop_motor(&motor_a);
+                sm_stop_motor(&motor_b);
+                sm_stop_motor(&motor_c);
 
         }
     }
