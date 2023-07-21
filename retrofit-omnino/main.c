@@ -41,28 +41,6 @@ int main() {
                 printf("vel vel vel\n");
                 int vel;
 
-                scanf("%d", &vel);
-                sm_set_velocity(&motor_a, vel, 'f');
-
-                scanf("%d", &vel);
-                sm_set_velocity(&motor_b, vel, 'f');
-
-                scanf("%d", &vel);
-                sm_set_velocity(&motor_c, vel, 'f');
-
-                break;
-
-            case 2:
-
-                break;
-
-            case 3:
-
-                break;
-
-            case 4:
-
-                break;
 
         }
     }
