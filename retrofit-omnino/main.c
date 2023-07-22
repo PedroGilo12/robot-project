@@ -25,24 +25,27 @@ int main() {
     sm_stop_motor(&motor_b);
     sm_stop_motor(&motor_c);
 
+    sm_set_velocity(&motor_a, 20, 'f');
+    sm_set_velocity(&motor_c, 20, 'b');
+
     while (1) {
         printf("Comandos: \n");
         printf("1 - Setar a velocidade de um motor\n");
-        printf("2 - Enviar velocidades");
         printf("3 - Parar todos os motores.\n");
         int choice;
 
         scanf("%d", &choice);
 
         switch (choice) {
-            case 1:
-                int address, velocity;
+            case 1: ;
+                int address;
+		int velocity;
                 char direction;
 
                 printf("Digite em ordem: Motor Velocidade Direção\n");
                 scanf("%d %d %c", &address, &velocity, &direction);
 
-                printf("Motor: %d\nVelocidade: %d\nDirection: %c", address, velocity, direction);
+                printf("Motor: %d\nVelocidade: %d\nDirection: %c\n", address, velocity, direction);
                 if(address == 1) {
                     sm_set_velocity(&motor_a, velocity, direction);
                 }
@@ -54,7 +57,7 @@ int main() {
                 }
 
                 break;
-            case 2:
+            case 3:
                 sm_stop_motor(&motor_a);
                 sm_stop_motor(&motor_b);
                 sm_stop_motor(&motor_c);
